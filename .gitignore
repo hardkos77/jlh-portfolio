@@ -1,0 +1,85 @@
+############################################
+# OS / Editors
+############################################
+.DS_Store
+Thumbs.db
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+############################################
+# Java / Maven / Spring Boot
+############################################
+# Maven output
+**/target/
+**/build/
+
+# Logs
+**/logs/
+*.log
+
+# JVM crash logs
+hs_err_pid*
+
+# Spring Boot
+**/.spring-boot-devtools.properties
+
+############################################
+# Gradle (si jamais)
+############################################
+.gradle/
+**/.gradle/
+
+############################################
+# Node / Angular
+############################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Angular build / cache
+dist/
+**/dist/
+.angular/
+**/.angular/
+coverage/
+**/coverage/
+*.tsbuildinfo
+
+# Local env files (si tu en crées)
+.env
+.env.*
+!.env.example
+
+############################################
+# Docker
+############################################
+# si tu utilises des secrets / overrides locaux
+docker-compose.override.yml
+
+############################################
+# Sécurité / Credentials (important !)
+############################################
+**/credentials/
+**/tokens/
+**/*.keystore
+**/*.jks
+**/*.p12
+**/*secret*
+**/*token*
+
+############################################
+# Misc
+############################################
+*.swp
+*.swo
