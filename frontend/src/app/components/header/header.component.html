@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container">
+    <a routerLink="/home" class="logo">
+      <img src="logo/logo.png" alt="Logo" />
+      <span class="site-name">Jean-Loup Hartmann</span>
+    </a>
+    <nav class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Accueil<span class="underline"></span>
+      </a>
+      <a routerLink="/about" routerLinkActive="active">
+        À propos<span class="underline"></span>
+      </a>
+      <a routerLink="/services" routerLinkActive="active">
+        Mes services<span class="underline"></span>
+      </a>
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact<span class="underline"></span>
+      </a>
+    </nav>
+  </div>
+</header>

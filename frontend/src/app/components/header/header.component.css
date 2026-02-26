@@ -1,0 +1,76 @@
+.site-header {
+  background-color: #f9f9f9;
+  padding: 0.5rem 2rem;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.site-header .logo img {
+  width: 80px;
+  height: auto;
+  margin-right: 1rem;
+  display: inline-block;
+}
+.site-header .logo .site-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.site-header .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.site-header .nav-links a {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-main);
+  font-weight: 500;
+  color: var(--secondary);
+  text-decoration: none;
+  padding-bottom: 0.4rem;
+}
+.site-header .nav-links a .underline {
+  position: absolute;
+  bottom: -2px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: var(--secondary);
+  transform: scaleX(0);
+  transform-origin: right;
+  pointer-events: none;
+}
+.site-header .nav-links a.active::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+}
+.site-header .nav-links a:hover::before {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=header.component.css.map */

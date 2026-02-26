@@ -1,0 +1,85 @@
+.site-header {
+  background-color: #f9f9f9;
+  padding: 0.5rem 2rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      width: 80px;
+      height: auto;
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
+    .site-name {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      color: var(--primary);
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      position: relative;
+      display: inline-block;
+      font-family: var(--font-main);
+      font-weight: 500;
+      color: var(--secondary);
+      text-decoration: none;
+      padding-bottom: 0.4rem;
+
+      .underline {
+        position: absolute;
+        bottom: -2px;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--secondary);
+        transform: scaleX(0);
+        transform-origin: right;
+        pointer-events: none;
+      }
+
+      // Point actif
+      &.active::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: var(--secondary);
+        border-radius: 50%;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.3s ease;
+      }
+
+      // Cache le point pendant le hover
+      &:hover::before {
+        opacity: 0;
+      }
+    }
+  }
+}

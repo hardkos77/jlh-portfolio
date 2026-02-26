@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --primary: #1F4E5F;
+  --secondary: #7F7070;
+  --accent: #AACFD0;
+  --background: #F4F7F7;
+  --muted: #79A8A9;
+  --color-highlight: #D9B27C;
+  --font-main: "Urbanist", sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+}
+
+/*# sourceMappingURL=styles.css.map */

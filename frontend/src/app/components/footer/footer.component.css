@@ -1,0 +1,43 @@
+.site-footer {
+  background-color: var(--primary);
+  color: white;
+  font-size: 0.875rem;
+  padding: 2rem 1.5rem;
+}
+.site-footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.site-footer .footer-container p {
+  margin-bottom: 1rem;
+}
+.site-footer .footer-container .footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.site-footer .footer-container .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease;
+}
+.site-footer .footer-container .footer-links a i {
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.site-footer .footer-container .footer-links a:hover {
+  color: var(--accent-contrast);
+}
+.site-footer .footer-container .footer-links a:hover i {
+  color: var(--accent-contrast);
+  transform: scale(1.15);
+}
+
+/*# sourceMappingURL=footer.component.css.map */
