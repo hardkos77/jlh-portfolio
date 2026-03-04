@@ -1,4 +1,12 @@
-import { Component, AfterViewInit, ElementRef, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -11,14 +19,19 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
   imports: [RouterModule],
 })
 export class HeaderComponent implements AfterViewInit {
-  private el = inject(ElementRef);
+  @ViewChild('headerRoot', { static: true })
+  headerRoot!: ElementRef<HTMLElement>;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.site-name', {
       scrollTrigger: {
-        trigger: 'body',
+        trigger: document.body,
         start: 'top top',
         end: '+=300',
         scrub: true,
@@ -28,32 +41,34 @@ export class HeaderComponent implements AfterViewInit {
       ease: 'power2.out',
     });
 
-    const links = this.el.nativeElement.querySelectorAll('.nav-links a');
+    const root = this.headerRoot?.nativeElement;
+    if (!root) return;
 
-    links.forEach((link: HTMLElement) => {
-      const underline = link.querySelector('.underline') as HTMLElement;
+    const links = root.querySelectorAll<HTMLAnchorElement>('.nav-links a');
 
-      if (underline) {
-        gsap.set(underline, { scaleX: 0, transformOrigin: 'right' });
+    links.forEach((link) => {
+      const underline = link.querySelector<HTMLElement>('.underline');
+      if (!underline) return;
 
-        link.addEventListener('mouseenter', () => {
-          gsap.to(underline, {
-            scaleX: 1,
-            transformOrigin: 'left',
-            duration: 0.4,
-            ease: 'power2.out',
-          });
+      gsap.set(underline, { scaleX: 0, transformOrigin: 'right' });
+
+      link.addEventListener('mouseenter', () => {
+        gsap.to(underline, {
+          scaleX: 1,
+          transformOrigin: 'left',
+          duration: 0.4,
+          ease: 'power2.out',
         });
+      });
 
-        link.addEventListener('mouseleave', () => {
-          gsap.to(underline, {
-            scaleX: 0,
-            transformOrigin: 'right',
-            duration: 0.4,
-            ease: 'power2.in',
-          });
+      link.addEventListener('mouseleave', () => {
+        gsap.to(underline, {
+          scaleX: 0,
+          transformOrigin: 'right',
+          duration: 0.4,
+          ease: 'power2.in',
         });
-      }
+      });
     });
   }
 }

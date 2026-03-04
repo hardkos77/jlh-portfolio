@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PageTitleComponent } from '../../components/page-title/page-title.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [ReactiveFormsModule, PageTitleComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

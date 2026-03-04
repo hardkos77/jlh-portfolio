@@ -1,1 +1,70 @@
-<p>contact works!</p>
+<app-page-title [title]="'Parlons de votre projet'"
+    [subtitle]="'Décrivez vos besoins, vos objectifs et vos délais. Je vous réponds généralement sous 24 à 48h ouvrées.'" />
+
+<section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Colonne gauche : formulaire (2/3) -->
+        <div class="lg:col-span-2">
+            <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-6 md:p-8">
+                <h2 class="text-xl font-semibold">Écrivez-moi</h2>
+                <p class="mt-2 text-gray-600">
+                    Partagez votre contexte et vos attentes pour que je vous propose la meilleure approche.
+                </p>
+
+                <!-- Formulaire : on le met juste après -->
+                <div class="mt-6">
+                    <!-- TODO: form -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne droite : infos -->
+        <aside class="space-y-6">
+            <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-6">
+                <h3 class="text-lg font-semibold">Informations de contact</h3>
+
+                <div class="mt-4 space-y-3 text-sm">
+                    <div class="flex items-start gap-3">
+                        <span class="mt-0.5">✉️</span>
+                        <div>
+                            <div class="font-medium">Email</div>
+                            <a class="text-[#1F4E5F] hover:underline" href="mailto:ton.email@domaine.fr">
+                                ton.email@domaine.fr
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="mt-0.5">in</span>
+                        <div>
+                            <div class="font-medium">LinkedIn</div>
+                            <a class="text-[#1F4E5F] hover:underline" href="#" target="_blank" rel="noreferrer">
+                                /ton-profil
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-6">
+                <h3 class="text-lg font-semibold">Disponibilités</h3>
+                <p class="mt-3 text-sm text-gray-600">
+                    Je réponds généralement sous 24 à 48h ouvrées.
+                    N’hésitez pas à donner un maximum de détails : objectifs, contraintes, budget, échéance.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-6">
+                <h3 class="text-lg font-semibold">Prendre RDV</h3>
+                <p class="mt-3 text-sm text-gray-600">
+                    Vous préférez échanger directement ? Réservez un créneau.
+                </p>
+
+                <!-- Placeholder : on branchera ton WebSocket + Google Agenda après -->
+                <div class="mt-4 rounded-xl bg-gray-50 p-4 text-sm text-gray-600">
+                    Module de réservation à venir (Google Agenda via WebSocket).
+                </div>
+            </div>
+        </aside>
+    </div>
+</section>

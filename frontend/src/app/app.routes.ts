@@ -6,8 +6,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { LegalMentionsComponent } from './pages/legal-mentions/legal-mentions.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'contact', component: ContactComponent },
